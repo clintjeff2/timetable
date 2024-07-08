@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<center>
+			<h1>Deployed by Jasio Casio</h1>
+		</center>
+		<script>
+			async function fetchCourses() {
+				const courses = await fetch('http://localhost:4000/timetable-ai/staff');
+				const data = await courses.json();
+				console.log(data);
+			}
+
+			fetchCourses();
+		</script>
+	</body>
+</html>
