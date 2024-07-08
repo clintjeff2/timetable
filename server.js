@@ -2,9 +2,10 @@ const app = require('./app');
 const mongoose = require('mongoose');
 
 const URL = 'mongodb://localhost:27017/timetable';
-
+const URL_DEPLOY =
+	'mongodb+srv://jeff:o1Uf0knhi9bPLpZp@cluster0.b7wyaaw.mongodb.net/timetable?retryWrites=true&w=majority&appName=Cluster0';
 mongoose
-	.connect(URL, {
+	.connect(URL_DEPLOY, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	})
