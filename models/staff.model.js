@@ -16,7 +16,7 @@ const staffSchema = new mongoose.Schema({
   },
   photo: {
     type: String,
-    required: [true, "A staff member must have a photo"],
+    // required: [true, "A staff member must have a photo"],
   },
   email: {
     type: String,

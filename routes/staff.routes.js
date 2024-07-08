@@ -1,16 +1,17 @@
-const express = require('express');
+const express = require("express");
 const {
-	createStaff,
-	getAllStaff,
-	uploadStaffPic,
-	updateStaff,
-	deleteStaff,
-} = require('./../controllers/staff.controller');
+  createStaff,
+  getAllStaff,
+  uploadStaffPic,
+  updateStaff,
+  deleteStaff,
+} = require("./../controllers/staff.controller");
 
 const router = express.Router();
 
-router.route('/').get(getAllStaff).post(uploadStaffPic, createStaff);
+// router.route('/').get(getAllStaff).post(uploadStaffPic, createStaff);
+router.route("/").get(getAllStaff).post(createStaff);
 
-router.route('/:id').patch(updateStaff).delete(deleteStaff);
+router.route("/:id").patch(updateStaff).delete(deleteStaff);
 
 module.exports = router;
