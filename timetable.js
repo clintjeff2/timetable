@@ -248,10 +248,9 @@ function runGeneticAlgorithm(generations, populationSize) {
 
   return population[0];
 }
-
 let bestTimetable = runGeneticAlgorithm(100, 50);
-console.log(bestTimetable);
-console.log(bestTimetable[0].schedule);
+// console.log(bestTimetable);
+// console.log(bestTimetable[0].schedule);
 
 function displayTimetable(timetable) {
   let date = new Date(startDate);
