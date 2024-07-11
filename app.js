@@ -2,6 +2,7 @@ const express = require("express");
 const staffRouter = require("./routes/staff.routes");
 const courseRouter = require("./routes/course.routes");
 const courseStaffRouter = require("./routes/staff_course.routes");
+const timetableRouter = require("./routes/timetable.routes");
 const cors = require("cors");
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(cors(""));
 app.use("/timetable-ai/staff", staffRouter);
 app.use("/timetable-ai/course", courseRouter);
 app.use("/timetable-ai/course_staff", courseStaffRouter);
+app.use("/timetable-ai/timetable", timetableRouter);
 
 app.use((err, req, res, next) => {
   //General error handling in nodejs app
