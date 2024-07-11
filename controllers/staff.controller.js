@@ -25,7 +25,6 @@ const upload = multer({ storage });
 exports.uploadStaffPic = upload.single("photo");
 
 exports.createStaff = async (req, res, next) => {
-  console.log(req.body);
   try {
     const staffData = { ...req.body };
     const staff = await Staff.create(staffData);
