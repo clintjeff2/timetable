@@ -4,11 +4,12 @@ const Timetable = require("../models/timetable.model");
 
 exports.createTimetable = async (req, res, next) => {
   try {
+    const courses = await Course.find();
+
     const timetable = new Timetable();
 
     await timetable.save();
     res.status(200).json({
-      status: "Timetable created successfully",
       timetable: timetable.timetable,
     });
   } catch (error) {
@@ -21,8 +22,6 @@ exports.getAllTimetables = async (req, res, next) => {
     const timetables = await Timetable.find();
 
     res.status(200).json({
-      status: "success",
-      message: "Successfully accessed",
       timetables: timetables,
     });
   } catch (error) {
@@ -30,7 +29,14 @@ exports.getAllTimetables = async (req, res, next) => {
   }
 };
 exports.getTimetable = async (req, res, next) => {
+  console.log(req.params);
   try {
+    const timetable = await Timetable.findById(req.params.id);
+    console.log(timetable);
+
+    res.status(200).json({
+      timetable: timetable,
+    });
   } catch (error) {
     res.status(500).json({ message: error.message, ...error });
   }
